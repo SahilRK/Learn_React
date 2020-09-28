@@ -10,25 +10,30 @@ const App = () => {
     return (
         <div className="ui container comments">
             {/*This is an example of component nesting. CommentDetail component is nested inside App component. These are also called child components.*/}
-            <CommentDetail 
-                author = "Sam" 
-                timeAgo="Today at 2:00PM" 
-                commentText="Nice blog post" 
-                profilePic={faker.image.avatar()}
-            />
-            <CommentDetail 
-                author = "Sah" 
-                timeAgo="Today at 5:00AM" 
-                commentText="Keep up the good work" 
-                profilePic={faker.image.avatar()}
-            />
-            <CommentDetail 
-                author = "Anki" 
-                timeAgo="Yesterday at 11:00PM" 
-                commentText="Nice idea" 
-                profilePic={faker.image.avatar()}
-            />
-            <ApprovalCard />
+            <ApprovalCard>
+                <CommentDetail 
+                    author = "Sam" 
+                    timeAgo="Today at 2:00PM" 
+                    commentText="Nice blog post" 
+                    profilePic={faker.image.avatar()}
+                />
+            </ApprovalCard>
+            <ApprovalCard>
+                <CommentDetail 
+                    author = "Sah" 
+                    timeAgo="Today at 5:00AM" 
+                    commentText="Keep up the good work" 
+                    profilePic={faker.image.avatar()}
+                />
+            </ApprovalCard>
+            <ApprovalCard>
+                <CommentDetail 
+                    author = "Anki" 
+                    timeAgo="Yesterday at 11:00PM" 
+                    commentText="Nice idea" 
+                    profilePic={faker.image.avatar()}
+                />
+            </ApprovalCard>
         </div>
     );
 }
