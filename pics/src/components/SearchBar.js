@@ -17,7 +17,7 @@ class SearchBar extends React.Component{
 
     render(){
         return(
-            <div>
+            <div style={{marginBottom: "10px"}}>
                 <form onSubmit={this.onFormSubmit}>
                     <div className="ui fluid action input">
                         <input type="text" placeholder="Search..." value={this.state.searchBarVal} onChange={e => {
