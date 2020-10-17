@@ -8,14 +8,20 @@ class SearchBar extends React.Component{
     onInputChange = (event) =>{
         this.setState({ searchVal: event.target.value})
     }
+    onFormSubmit = (event) =>{
+        //Add this to prevent the onSubmit event handler from performing a default operation on refreshing the page.
+        event.preventDefault();
+
+        //TODO: Add a callback function from App which will pass the value back to App to be used in sending values to API's
+    }
     render(){
         return(
             <div className="search-bar-container ui segment">
-                <form className="ui form">
+                <form className="ui form" onSubmit={this.onFormSubmit}>
                     <div className="field">
                         <label>Video Search</label>
                         <input 
-                            type="text" 
+                            type="text"
                             value={this.state.searchVal}
                             onChange={this.onInputChange}
                         />
